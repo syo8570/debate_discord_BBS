@@ -1,0 +1,2 @@
+class HowToPlaysController < ApplicationController
+end

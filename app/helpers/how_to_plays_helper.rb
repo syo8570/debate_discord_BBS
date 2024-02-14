@@ -1,0 +1,2 @@
+module HowToPlaysHelper
+end

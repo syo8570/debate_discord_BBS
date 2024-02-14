@@ -65,3 +65,14 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Bootstrap gem[https://github.com/twbs/bootstrap-rubygem]
+gem 'bootstrap', '~> 5.3.2'
+# bootstrapのjqueryに依存しているオプションを使えるようにするgem
+gem 'jquery-rails'
+
+# Bootstrapを使えるようにSCSSを使えるようにするSASSコンパイル用gem[https://github.com/tablecheck/dartsass-sprockets?tab=readme-ov-file]
+gem 'dartsass-sprockets'
+
+# JSランタイムgem
+gem 'mini_racer'
