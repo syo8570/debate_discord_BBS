@@ -1,11 +1,23 @@
 Rails.application.routes.draw do
-  get 'static_pages/top'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'static_pages#top'
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  resource :static_pages, only: %i[top]
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  get 'login', to: 'user_sessions#new', :as => :login
+  post 'login', to: 'user_sessions#create'
+  delete 'logout', to: 'user_sessions#destroy'
+
+  resource :how_to_plays, only: %i[index]
+  resource :profiles, only: %i[show edit update]
+  resources :password_resets, only: %i[create edit update new]
+
+  resources :likes, only: %i[create destroy]
+  resources :users, only: %i[new create]
+
+  resources :boards do
+    member do
+      get :likes
+    end
+  end
+
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

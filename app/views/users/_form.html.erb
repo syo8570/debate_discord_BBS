@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+  <div style="color: red">
+    <h2><%= pluralize(@user.errors.count, "つの情報を修正して下さい") %></h2>
+
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

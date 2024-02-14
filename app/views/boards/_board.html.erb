@@ -1,0 +1,36 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="board-id-<%= board.id %>">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex"></div>
+          <h4 class="card-title">
+            <%= link_to board.subject.title, board_path(board) %>
+          </h4>
+          <% if current_user&.own?(board) %>
+            <div class='ms-auto'>
+              <%= link_to edit_board_path(board), id: "button-edit-#{board.id}" do %>
+                <i class="bi bi-pencil-fill"></i>
+              <% end %>
+              <%= link_to board_path(board), id: "button-delete-#{board.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+                <i class="bi bi-trash-fill"></i>
+              <% end %>
+            </div>
+          <% else %>
+            <div class='ms-auto'>
+              <% if current_user&.like?(board) %>
+                <%= render 'unlike', { board: board } %>
+              <% else %>
+                <%= render 'like', { board: board } %>
+              <% end %>
+            </div>
+          <% end %>
+        <p class="card-text">
+          <%= "優勝：#{board.conclusion}" %>
+        </p>
+        <p class="card-text">
+          <%= "次点：#{board.runner_up}" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
