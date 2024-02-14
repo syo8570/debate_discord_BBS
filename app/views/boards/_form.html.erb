@@ -1,0 +1,16 @@
+<%= form_with(model: @board, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <div class="mb-3">
+    <%= f.label :title, class: "board_title" %>
+      <%= text_field_tag :title, @subject.title, class: "form-control", id: "board_title", readonly: true %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :conclusion, class: "board_conclusion" %>
+      <%= f.text_field :conclusion, class: "form-control", id: "board_conclusion", rows: 10 %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :runner_up, class: "board_runner_up" %>
+      <%= f.text_field :runner_up, class: "form-control", id: "board_runner_up", rows: 10 %>
+    </div>
+  <%= f.submit (board.new_record? ? I18n.t('submit.create') : I18n.t('submit.update')), class: "btn btn-primary" %>
+<% end %>

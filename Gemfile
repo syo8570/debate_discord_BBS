@@ -58,6 +58,13 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  #デバッグ用ツール(binding.pry)
+    gem 'pry-byebug'
+
+  # パスワードリセットの確認アドレス用[https://github.com/fgrehm/letter_opener_web]
+  gem 'letter_opener_web'
+
 end
 
 group :test do
@@ -76,3 +83,15 @@ gem 'dartsass-sprockets'
 
 # JSランタイムgem
 gem 'mini_racer'
+
+gem 'sorcery'
+
+gem 'kaminari'
+
+gem 'rails-i18n'
+
+gem 'ransack'
+
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
+
+gem 'config'
