@@ -71,24 +71,26 @@ Rails.application.configure do
   # config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "rails_app_production"
 
+  # herokuデプロイURL
   host = 'debate-discord-bbs-b5c63f29db06.herokuapp.com'
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host, protocol: 'https' }
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => 'smtp.mailgun.org',
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => host,
-    :authentication => :plain,
+    port: 587,
+    address: 'smtp.gmail.com',
+    domain: 'gmail.com', #Gmailを使う場合
+    user_name: ENV['GMAIL_ADDRESS'], #Gmailアカウントのメールアドレス
+    password: ENV['GMAIL_PASSWORD'], #Gmailで設定したアプリパスワード
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
