@@ -84,6 +84,9 @@ gem 'dartsass-sprockets'
 # JSランタイムgem
 gem 'mini_racer'
 
+# 環境変数を自動認識させるgem
+gem 'dotenv-rails'
+
 gem 'sorcery'
 
 gem 'kaminari'
