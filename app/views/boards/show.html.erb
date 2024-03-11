@@ -10,7 +10,15 @@
               <h3 style="display: inline;"><%= @subject.title %></h3>
             </div>
           </div>
-          <p><%= simple_format(@subject.title) %></p>
+        <p class="card-text">
+          <%= "投稿者： #{@board.user.name}" %>
+        </p>
+        <p class="card-text">
+          <%= "優勝：#{@board.conclusion}" %>
+        </p>
+        <p class="card-text">
+          <%= "次点：#{@board.runner_up}" %>
+        </p>
         </div>
       </article>
       </div>

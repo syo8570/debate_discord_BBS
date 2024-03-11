@@ -16,6 +16,7 @@ Rails.application.configure do
 
   # Enable server timing
   config.server_timing = true
+  config.scoped_views = true
 
   config.file_watcher = ActiveSupport::FileUpdateChecker
 

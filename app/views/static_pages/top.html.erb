@@ -14,41 +14,6 @@
       </symbol>
     </svg>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-  labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
 <main>
 
 <div class="center-block">
@@ -97,20 +62,17 @@
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <h2 class="fw-normal">1.BOTの導入</h2>
-        <p>サイト上部の『ディスコードBOTを追加』を<br>クリックすると導入ページに飛びます</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <p>サイト上部の『ディスコードBOTを追加』を<br>クリックすると導入ページに飛びます<br>※導入にはサーバーの管理権限が必要です</p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <h2 class="fw-normal">2.BOTを使ってディベート</h2>
-        <p>ディスコードに追加したBOTを使って、<br>提示された議題を元にディベートをして下さい。<br>詳しい使い方、遊び方は<a href="<%= how_to_plays_url %>">こちら</a>をご確認下さい</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <p>ディスコードに追加したBOTを使って、<br>提示された議題を元にディベートをして下さい。<br>詳しい導入方法、遊び方は<a href="<%= how_to_plays_url %>">遊び方</a>をご確認下さい</p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <h2 class="fw-normal">3.ディベート結果を投稿</h2>
         <p>ディベート時間が経過したのち<br>BOTからURLを提示されるので、<br>そちらから投稿ページへ行き<br>色んな人にディベート結果を共有しましょう！</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
     </div>
