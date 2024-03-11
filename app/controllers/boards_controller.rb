@@ -1,10 +1,7 @@
 class BoardsController < ApplicationController
   before_action :find_board, only: %i[edit update destroy]
-  skip_before_action :require_login
-
-  # binding.pryを使う時のコード
-  # docker-compose up -d && docker attach 85853ebc405e
-
+  before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:index, :show]
 
   def index
     @q = Board.ransack(params[:q])
