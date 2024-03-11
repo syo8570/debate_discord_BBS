@@ -6,17 +6,14 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  resource :how_to_plays, only: %i[index]
+  resources :how_to_plays, only: %i[index]
   resource :profiles, only: %i[show edit update]
   resources :password_resets, only: %i[create edit update new]
 
-  resources :likes, only: %i[create destroy]
   resources :users, only: %i[new create]
 
   resources :boards do
-    member do
-      get :likes
-    end
+    resource :like, only: %i[create destroy]
   end
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?

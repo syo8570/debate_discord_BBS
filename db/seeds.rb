@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+10.times do
+  subject = Subject.create(title: Faker::Book.title)
+
+  Board.create(content: Faker::animal.sentence, subject_id: subject.id)
+end

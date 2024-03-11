@@ -1,13 +1,15 @@
 class BoardsController < ApplicationController
   before_action :find_board, only: %i[edit update destroy]
   skip_before_action :require_login
+
   # binding.pryを使う時のコード
-  # docker-compose up -d && docker attach 7c6b0a5faf2a
+  # docker-compose up -d && docker attach 85853ebc405e
 
 
   def index
     @q = Board.ransack(params[:q])
     @boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+
   end
 
   def new
@@ -18,9 +20,10 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @subject = Subject.find(params[:id])
+    @subject = Subject.find(@board.subject_id)
+    @user_name = @board.user.name
   end
-  
+
   def create
     @subject = Subject.find_or_create_by(title: params[:title])
     @board = current_user.boards.build(board_params)
@@ -67,3 +70,4 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:conclusion, :runner_up, :subject_id)
   end
 end
+

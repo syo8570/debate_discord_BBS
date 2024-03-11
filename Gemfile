@@ -98,3 +98,5 @@ gem 'ransack'
 gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 
 gem 'config'
+
+gem 'faker'

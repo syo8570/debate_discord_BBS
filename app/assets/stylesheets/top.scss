@@ -69,3 +69,17 @@
 .bd-mode-toggle {
   z-index: 1500;
 }
+
+h1 {
+  text-align: center;
+}
+
+.custom-bg-color {
+  background-color: whitesmoke;
+}
+
+.container-top{
+  max-width: 1200px; /* 例えば最大幅を800pxに設定 */
+  margin:  auto; /* 上下のマージンを0、左右のマージンを自動で中央揃えに */
+  
+}
